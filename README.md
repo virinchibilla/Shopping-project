@@ -18,10 +18,6 @@ To install docker, download it from [here](https://www.docker.com/products/docke
 
 First go to the Shopping project Folder( cd miniproject)
 
-```bash
-$ cp postgres.env.sample postgres.env
-```
-
 
 To get a list of helper commands:
 
@@ -43,6 +39,13 @@ Then you will get access to the following commands:
 - To build the production: `build-production`
 
 
+-> Steps to follow:
+
+After running stack
+If there is any problem with 'docker-compose logs backend' 
+Go to docker ps 
+Stop backend docker container Id (docker stop container ID) and then start backend container ID (docker start container ID)
+start-stack 
 
 1. Inorder to interact with django Rest framework. First create django superuser by typing `create-su` and then go to http://127.0.0.1:8000/admin/ 
 
