@@ -66,6 +66,8 @@ Available commands:
 \tdb-migrate
 \tcreate-su
 \tbuild-production
-\fix-sass
+\tfix-sass
+\tfix-start-stack
+
 
 "

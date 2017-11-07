@@ -14,6 +14,7 @@ Docker, along with docker-compose, is used to manage the dependencies of this pr
 
 To install docker, download it from [here](https://www.docker.com/products/docker) (docker-compose should be installed along with the process).
 
+
 ## Get started
 
 First go to the Shopping project Folder( cd miniproject)
@@ -37,15 +38,38 @@ Then you will get access to the following commands:
 - To run tests for the backend: `test-backend`
 - To run tests for the frontend: `test-frontend`
 - To build the production: `build-production`
+- To fix sass packages: `fix-sass`
+- To fix problem in backend: `fix-start-stack`
 
 
 -> Steps to follow:
 
 After running stack
-If there is any problem with 'docker-compose logs backend' 
-Go to docker ps 
-Stop backend docker container Id (docker stop container ID) and then start backend container ID (docker start container ID)
-start-stack 
+If there is any problem with 'db backend' 
+
+connect to the db docker postgres image --> docker exec -it $(docker ps -qf "name=miniproject_db_1")  bash
+
+ run 'psql -U postgres' then run: 
+
+drop database backend;
+CREATE DATABASE "backend"
+    WITH OWNER "postgres"
+    ENCODING 'UTF8'
+    LC_COLLATE = 'en_US.UTF-8'
+    LC_CTYPE = 'en_US.UTF-8'
+    TEMPLATE template0;
+
+    \q
+    exit
+
+db-make-migrations
+db-migrate
+fix-sass
+restart-stack
+fix-start-stack
+
+
+
 
 1. Inorder to interact with django Rest framework. First create django superuser by typing `create-su` and then go to http://127.0.0.1:8000/admin/ 
 
