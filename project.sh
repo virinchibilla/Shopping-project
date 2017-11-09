@@ -34,6 +34,10 @@ function fix-sass {
     docker exec -it miniproject_frontend_1 npm rebuild node-sass --force
 }
 
+function create-database {
+    docker exec -i $(docker ps -qf "name=miniproject_db_1") psql  -U postgres  -c 'CREATE DATABASE backend WITH OWNER "postgres" ENCODING UTF8 LC_COLLATE = "en_US.UTF-8" LC_CTYPE = "en_US.UTF-8" TEMPLATE template0;'
+}
+
 function fix-start-stack {
     start-stack
     id=$(docker ps -qf "name=miniproject_backend_1")
@@ -68,6 +72,7 @@ Available commands:
 \tbuild-production
 \tfix-sass
 \tfix-start-stack
+\tcreate-database
 
 
 "
