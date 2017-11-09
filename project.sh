@@ -1,13 +1,13 @@
 function build-stack {
-    docker-compose -p miniproject build $@
+    docker-compose -p shop build $@
 }
 
 function start-stack {
-    docker-compose -p miniproject up -d
+    docker-compose -p shop up -d
 }
 
 function stop-stack {
-    docker-compose -p miniproject kill
+    docker-compose -p shop kill
 }
 
 function restart-stack {
@@ -15,37 +15,37 @@ function restart-stack {
 }
 
 function logs {
-    docker-compose -p miniproject logs -f $@
+    docker-compose -p shop logs -f $@
 }
 
 function db-make-migrations {
-    docker exec miniproject_backend_1 python manage.py makemigrations
+    docker exec shop_backend_1 python manage.py makemigrations
 }
 
 function db-migrate {
-    docker exec miniproject_backend_1 python manage.py migrate
+    docker exec shop_backend_1 python manage.py migrate
 }
 
 function create-su {
-    docker exec -it miniproject_backend_1 python manage.py createsuperuser
+    docker exec -it shop_backend_1 python manage.py createsuperuser
 }
 
 function fix-sass {
-    docker exec -it miniproject_frontend_1 npm rebuild node-sass --force
+    docker exec -it shop_frontend_1 npm rebuild node-sass --force
 }
 
 function create-database {
-    docker exec -i $(docker ps -qf "name=miniproject_db_1") psql  -U postgres  -c 'CREATE DATABASE backend WITH OWNER "postgres" ENCODING UTF8 LC_COLLATE = "en_US.UTF-8" LC_CTYPE = "en_US.UTF-8" TEMPLATE template0;'
+    docker exec -i $(docker ps -qf "name=shop_db_1") psql  -U postgres  -c 'CREATE DATABASE backenddb WITH OWNER "postgres" ENCODING UTF8 LC_COLLATE = "en_US.UTF-8" LC_CTYPE = "en_US.UTF-8" TEMPLATE template0;'
 }
 
 function database-generate-migrate {
-    create-database && db-make-migrations && db-migrate
+    create-database ; db-make-migrations && db-migrate
 }
 
 
 function fix-start-stack {
     start-stack
-    id=$(docker ps -qf "name=miniproject_backend_1")
+    id=$(docker ps -qf "name=shop_backend_1")
     docker stop "$id"
     docker start "$id"
 }
@@ -56,7 +56,7 @@ function fix-sass-stack {
 
 
 function build-production {
-    docker exec miniproject_frontend_1 npm run build
+    docker exec shop_frontend_1 npm run build
     rm -rf nginx/static
     mkdir nginx/static
     cp -r frontend/dist/ nginx/

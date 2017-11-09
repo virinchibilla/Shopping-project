@@ -32,6 +32,7 @@ Then you will get access to the following commands:
 - To run the project: `$ start-stack`
 - To display real-time logs: `$ logs`
 - To stop the project: `stop-stack`
+- To stop and run the project: `restart-stack`
 - To create new migrationfiles: `db-make-migrations`
 - To run a database migration: `db-migrate`
 - To create a django superuser: `create-su`
@@ -52,7 +53,7 @@ $ start-stack
 $ database-generate-migrate 
 ```
 ```
-$ fix-sass-stack
+$ restart-stack
 ```
 
 
