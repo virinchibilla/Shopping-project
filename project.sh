@@ -50,6 +50,10 @@ function fix-start-stack {
     docker start "$id"
 }
 
+function fix-sass-stack {
+    fix-sass && restart-stack && fix-start-stack 
+}
+
 
 function build-production {
     docker exec miniproject_frontend_1 npm run build
@@ -79,6 +83,8 @@ Available commands:
 \tfix-start-stack
 \tcreate-database
 \tdatabase-generate-migrate
+\fix-sass-stack
+
 
 
 "

@@ -36,39 +36,20 @@ Then you will get access to the following commands:
 - To run a database migration: `db-migrate`
 - To create a django superuser: `create-su`
 - To run tests for the backend: `test-backend`
-- To run tests for the frontend: `test-frontend`
 - To build the production: `build-production`
 - To fix sass packages: `fix-sass`
 - To fix problem in backend: `fix-start-stack`
 
 
--> Steps to follow:
+-> Build & run the project:
 
-After running stack
-If there is any problem with 'db backend' 
+$ build-stack
 
-connect to the db docker postgres image --> docker exec -it $(docker ps -qf "name=miniproject_db_1")  bash
+$ start-stack
 
- run 'psql -U postgres' then run: 
+$ database-generate-migrate 
 
-drop database backend;
-CREATE DATABASE "backend"
-    WITH OWNER "postgres"
-    ENCODING 'UTF8'
-    LC_COLLATE = 'en_US.UTF-8'
-    LC_CTYPE = 'en_US.UTF-8'
-    TEMPLATE template0;
-
-    \q
-    exit
-
-db-make-migrations
-db-migrate
-fix-sass
-restart-stack
-fix-start-stack
-
-
+$ fix-sass-stack
 
 
 1. Inorder to interact with django Rest framework. First create django superuser by typing `create-su` and then go to http://127.0.0.1:8000/admin/ 
