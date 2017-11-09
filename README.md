@@ -41,15 +41,19 @@ Then you will get access to the following commands:
 - To fix problem in backend: `fix-start-stack`
 
 
--> Build & run the project:
-
+## Build & run the project:
+```
 $ build-stack
-
+```
+```
 $ start-stack
-
+```
+```
 $ database-generate-migrate 
-
+```
+```
 $ fix-sass-stack
+```
 
 
 1. Inorder to interact with django Rest framework. First create django superuser by typing `create-su` and then go to http://127.0.0.1:8000/admin/ 
