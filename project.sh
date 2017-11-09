@@ -83,7 +83,7 @@ Available commands:
 \tfix-start-stack
 \tcreate-database
 \tdatabase-generate-migrate
-\fix-sass-stack
+\tfix-sass-stack
 
 
 
