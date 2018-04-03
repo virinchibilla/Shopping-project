@@ -22,5 +22,7 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 </style>

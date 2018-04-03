@@ -3,3 +3,4 @@ postgres_data/
 backup/
 *.DS_Store
 *.pyc
+/backend/static/

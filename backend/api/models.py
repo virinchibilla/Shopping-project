@@ -69,11 +69,11 @@ class Item(models.Model):
 
 class Shopping(models.Model):
 	invoice_id = models.CharField(max_length=64)
-	item_id = models.ForeignKey(Item)
-	user = models.ForeignKey(Apiuser)
+	item_id = models.ForeignKey('Item', on_delete=models.CASCADE,)
+	user = models.ForeignKey('Apiuser', on_delete=models.CASCADE,)
 	quantity= models.IntegerField()
 	date = models.DateTimeField(default=datetime.now, blank=True)
-	address = models.ForeignKey(Address)
+	address = models.ForeignKey('Address', on_delete=models.CASCADE,)
 	
 	"""docstring for ClassName"""
 	def __str__(self):
