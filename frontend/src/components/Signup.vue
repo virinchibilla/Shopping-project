@@ -63,7 +63,6 @@
                 >Sign up</button>
               </p>
             </div>
-            <div v-html="error" class="notification box is-danger"></div>
       </div>
     </div>
   </div>
