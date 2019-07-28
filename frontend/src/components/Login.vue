@@ -9,7 +9,7 @@
         </div>
         <form class="column is-half">
           <div class="field">
-            <label class="label">username</label>
+            <label class="label">Username</label>
             <p class="control">
               <input v-model="username" class="input" type="text" placeholder="username">
             </p>

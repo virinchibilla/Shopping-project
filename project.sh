@@ -35,7 +35,7 @@ function fix-sass {
 }
 
 function create-database {
-    docker exec -i $(docker ps -qf "name=shop_db_1") psql  -U postgres  -c 'CREATE DATABASE backenddb WITH OWNER "postgres" ENCODING UTF8 LC_COLLATE = "en_US.UTF-8" LC_CTYPE = "en_US.UTF-8" TEMPLATE template0;'
+    docker exec -i $(docker ps -qf "name=shop_db_1") psql  -U postgres  -c 'CREATE DATABASE postgres WITH OWNER "postgres" ENCODING UTF8 LC_COLLATE = "en_US.UTF-8" LC_CTYPE = "en_US.UTF-8" TEMPLATE template0;'
 }
 
 function database-generate-migrate {
