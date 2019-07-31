@@ -3,15 +3,15 @@
     <div class="container columns">
       <div class="column is-8">
         <div class="columns">
-          <div class="column is-4">
-            <h1 class="title is-1">{{ title }}</h1>
+          <div class="column is-6">
+            <h1 class="title is-2">{{ title }}</h1>
           </div>
         </div>
         <form class="column is-half">
           <div class="field">
             <label class="label">Username</label>
             <p class="control">
-              <input v-model="username" class="input" type="text" placeholder="username">
+              <input v-model="username" class="input" type="text" placeholder="Username">
             </p>
           </div>
           <br>
@@ -25,19 +25,17 @@
           <div class="columns">
             <div class="column is-3">
               <p class="control">
-                <button
-                class="button is-primary"
-                v-on:click = 'loguser'
-                >Sign in</button>
+                <button class="button is-primary"
+                v-on:click = 'loguser'>Sign in
+                </button>
               </p>
               <p v-if="loginFailed" class="help is-danger">{{ loginError }}</p>
             </div> <br>
             <div class="column is-2">
               <p class="control">
-                <button
-                class="button is-primary"
-                v-on:click = 'signup'
-                >Sign up</button>
+                <button class="button is-primary"
+                v-on:click = 'signup'>Sign up
+                </button>
               </p>
             </div>
           </div>
@@ -62,7 +60,7 @@
         msg: 'Welcome to Your Vue.js App',
         username: '',
         password: '',
-        title: '',
+        title: 'Shopping',
         loginFailed: false,
       };
     },
@@ -95,6 +93,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import '~bulma';
+.title {
+  color:  #0CA7EA;
+}
 
 </style>

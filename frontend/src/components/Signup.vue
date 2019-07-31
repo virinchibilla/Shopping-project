@@ -3,8 +3,8 @@
     <div class="container columns">
       <div class="column is-8">
         <div class="columns">
-          <div class="column is-4">
-        <h1 class="title is-1">{{ title }}</h1>
+          <div class="column is-5">
+        <h1 class="title is-2">{{ title }}</h1>
       </div>
     </div><br>
         <div class="columns">
@@ -55,14 +55,20 @@
             <input v-model="username" class="input" type="text">
           </div>
         </div>
-        <div class="column is-4">
-              <p class="control">
-                <button
-                class="button is-primary"
-                v-on:click = 'signup'
-                >Sign up</button>
-              </p>
-            </div>
+        <div class="columns">
+          <div class="column is-2">
+              <button
+              class="button is-primary"
+              v-on:click = 'back'
+              >Back</button>
+          </div> 
+          <div class="column is-1">
+              <button
+              class="button is-primary"
+              v-on:click = 'signup'
+              >Sign up</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -83,7 +89,7 @@
         password: '',
         confirmpassword: '',
         username: '',
-        title: 'Signup',
+        title: 'Sign up',
         error: '',
       };
     },
@@ -110,6 +116,9 @@
           this.msg = error.message;
         });
       },
+      back() {
+        router.push('/*');
+      },
     },
     beforeMount() {
    // this.loguser();
@@ -119,6 +128,8 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import '~bulma';
+.title {
+  color:  #6EEA0C;
+}
 
 </style>

@@ -12,6 +12,9 @@
           <li :class="{'is-active' : tabSelected=='logout'}"><a @click="logout">Logout</a></li>
         </ul>
       </div>
+      <div class="column">
+        <h1 class="title is-4" id="adrs" v-show="tabSelected==''">First fill your address before you Buy a Product</h1>
+      </div>
       <div id="shopping" class="container columns" v-if="tabSelected==='shopping'">
         <div class="column is-12">
           <div class="columns is-8">
@@ -141,7 +144,6 @@
     </div>
     </div>
     </div>
-
       <div id="address" class="container columns" v-if="tabSelected==='address'">
         <div class="column is-8">
           <div v-for='address, i in addresses'>
@@ -182,7 +184,7 @@
       <hr>
       <div class="columns">
         <div class="column is-2">
-          <button class="button" v-on:click='save_address'>Submit</button>
+          <button class="button is-primary" v-on:click='save_address'>Submit</button>
         </div>
       </div>
       </div>
@@ -224,8 +226,8 @@
              {{ msg }}
            </div>
         </div>
-        <div v-else>
-          you are not an admin
+        <div v-else class="column">
+          <h1 class="title is-4">You are not an Admin</h1>
         </div>
       </div>
       <div id="my_invoices" class="container columns" v-if="tabSelected==='my_invoices'">
@@ -250,7 +252,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="button" v-on:click="get_invoice">get invoice</div>
+          <div class="button is-primary" v-on:click="get_invoice">get invoice</div>
         </div>
       </div>
 </div>
@@ -485,5 +487,8 @@ h1, h2 {
 
 a {
   color: #42b983;
+}
+#adrs {
+  color: red;
 }
 </style>
