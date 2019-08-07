@@ -8,6 +8,11 @@ The front-end uses [Vue.js](https://vuejs.org), with help of [webpack](https://w
 
 The back-end uses [Django REST framework](http://www.django-rest-framework.org) with [PostgreSQL](https://www.postgresql.org) as the database.
 
+This is a mini application with the theme e-commerce shopping website.
+First you will sign up as a new user and then you sign in.
+After sign in you will get access to buy products and every product that you buy you will get invoice.
+You can also change role permissions of users who are registered.
+
 ## Prerequisites
 
 Docker, along with docker-compose, is used to manage the dependencies of this project. 
