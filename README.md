@@ -60,14 +60,15 @@ $ fix-start-stack
 ```
 
 
-1. Inorder to interact with django Rest framework (Backend). First create django superuser by typing `create-su` and then go to http://127.0.0.1:8000/admin/ 
+1. Inorder to interact with django Rest framework (Backend). First create django superuser by typing `create-su` and then go to http://localhost:8000/admin/
 
-2. Log into `http://127.0.0.1:8080/?#/` in the web brwoser to interact with the shopping project.
+2. Log into http://localhost://8080/#/ or http://127.0.0.1:8080/?#/ in the web brwoser to interact with the shopping project.
 
-3. In order to buy products, first add products and their prices manually in the django Rest framework.
+3. To buy product items, first add items and their prices manually in the django Rest framework.
 
 4. First fill your address in the browser inorder to get invoices for the products that you buy.
 
+5. To change roles of users you can change it under Apiusers section in django.
 
 ## Collaboration
 
