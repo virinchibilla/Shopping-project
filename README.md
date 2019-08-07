@@ -17,7 +17,7 @@ To install docker, download it from [here](https://www.docker.com/products/docke
 
 ## Get started
 
-First go to the Shopping project Folder( cd miniproject)
+First go to the Shopping project Folder( cd Shopping-project)
 
 
 To get a list of helper commands:
@@ -53,13 +53,20 @@ $ start-stack
 $ database-generate-migrate 
 ```
 ```
-$ restart-stack
+$ create-su 
+```
+```
+$ fix-start-stack
 ```
 
 
-1. Inorder to interact with django Rest framework. First create django superuser by typing `create-su` and then go to http://127.0.0.1:8000/admin/ 
+1. Inorder to interact with django Rest framework (Backend). First create django superuser by typing `create-su` and then go to http://127.0.0.1:8000/admin/ 
 
 2. Log into `http://127.0.0.1:8080/?#/` in the web brwoser to interact with the shopping project.
+
+3. In order to buy products, first add products and their prices manually in the django Rest framework.
+
+4. First fill your address in the browser inorder to get invoices for the products that you buy.
 
 
 ## Collaboration
