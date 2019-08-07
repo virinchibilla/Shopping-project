@@ -66,9 +66,9 @@ $ fix-start-stack
 
 3. To buy product items, first add items and their prices manually in the django Rest framework.
 
-4. First fill your address in the browser inorder to get invoices for the products that you buy.
+4. First, fill your address in the browser inorder to get invoices for the products that you buy.
 
-5. To change roles of users you can change it under Apiusers section in django.
+5. To change roles of users, you can change it under Apiusers section in django.
 
 ## Collaboration
 
